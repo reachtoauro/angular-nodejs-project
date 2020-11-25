@@ -1,6 +1,8 @@
 # MyFirstProject
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0 and 
+Node.js version 14.15.0
+
 
 # Functions
 1. User can register with unique email addresses only
@@ -10,6 +12,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 5. Authentication and Authorization configured using JWT
 6. User sessions and errors handled globally
 7. backend APIs intercepted for authorization
+8. All secrets are managed using dotenv library
 
 # Usage
 Angular(formerly named Angular 2) Frontend to a NodeJS & Express & MongoDB Backend.
@@ -25,6 +28,12 @@ Graceful error handling
 MongoDB connectivity using Mongoose Framework
 Usage of Interceptors, Constructors, Injections, EntryComponents, Emitter-Subscriber, 
 
+## Database configuration
+place a `.env` file on your project root folder with `DB_HOST`, `DB_USER` and `DB_PASS` in `key=value` format. It will look like this:
+
+DB_HOST=<db url>
+DB_USER=<db username>
+DB_PASS=<db password>
 
 ## Development server
 

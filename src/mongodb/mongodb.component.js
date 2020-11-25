@@ -1,6 +1,10 @@
 const { MongoClient } = require("mongodb");
+require('dotenv').config()
+const host = process.env.DB_HOST;
+const user = process.env.DB_USER;
+const password = process.env.DB_PASS;
 
-const uri = "insert your mongoDB SRV connection string here";
+const uri = "mongodb+srv://" + user + ":" + password + "@" + host;
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true

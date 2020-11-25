@@ -7,7 +7,12 @@ const postRoutes = require('./routes/posts');
 const userRoutes = require('./routes/user');
 var app = express();
 
-moogoose.connect('mongodb srv url goes here', {
+require('dotenv').config()
+const host = process.env.DB_HOST;
+const user = process.env.DB_USER;
+const password = process.env.DB_PASS;
+
+moogoose.connect('mongodb+srv://' + user + ':' + password + '@' + host, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false
