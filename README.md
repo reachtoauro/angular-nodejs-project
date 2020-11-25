@@ -2,6 +2,15 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
 
+# Functions
+1. User can register with unique email addresses only
+2. Password will not be stored in DB instead encrypted using bcryot
+3. Once register user can upload images(multer library used for image storage locally)
+4. User can edit or delete their own posts only but can view all posts
+5. Authentication and Authorization configured using JWT
+6. User sessions and errors handled globally
+7. backend APIs intercepted for authorization
+
 # Usage
 Angular(formerly named Angular 2) Frontend to a NodeJS & Express & MongoDB Backend.
 Angular 2 and NodeJS, together with ExpressJS (a NodeJS Framework) and MongoDB formed the very popular MEAN stack.

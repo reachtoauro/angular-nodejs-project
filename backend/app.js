@@ -7,7 +7,7 @@ const postRoutes = require('./routes/posts');
 const userRoutes = require('./routes/user');
 var app = express();
 
-moogoose.connect('mongodb+srv://testauro:testauro123@cluster0.vhaaz.mongodb.net/test?retryWrites=true&w=majority', {
+moogoose.connect('mongodb srv url goes here', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false
