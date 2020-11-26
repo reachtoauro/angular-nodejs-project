@@ -7,10 +7,11 @@ const postRoutes = require('./routes/posts');
 const userRoutes = require('./routes/user');
 var app = express();
 
-require('dotenv').config()
-const host = process.env.DB_HOST;
+require('dotenv').config() 
+const host = process.env.DB_URL;
 const user = process.env.DB_USER;
-const password = process.env.DB_PASS;
+const password = process.env.DB_PWD;
+
 
 moogoose.connect('mongodb+srv://' + user + ':' + password + '@' + host, {
     useNewUrlParser: true,
@@ -18,15 +19,16 @@ moogoose.connect('mongodb+srv://' + user + ':' + password + '@' + host, {
     useFindAndModify: false
 })
     .then(() => {
-        console.log('Connected to database');
+        console.log('Connected to database.');
+        console.log('Application started!!');
     })
-    .catch(() => {
-        console.log('Connected failed');
+    .catch((err) => {
+        console.error('Connected failed '+err);
     });
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use("/images", express.static(path.join("backend/images")));
+app.use("/images", express.static(path.join("images")));
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');

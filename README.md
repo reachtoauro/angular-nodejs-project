@@ -51,6 +51,33 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
+# Deployment
+## Frontend
+ Run `ng build --prod` and it will create files inside your `dist` folder. Copy and upload those files into your AWS S3 bucket. 
+ Set the bucket permission to public and set the Bukcet Policy as below:
+ `{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "PublicRead",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": [
+                "s3:GetObject",
+                "s3:GetObjectVersion"
+            ],
+            "Resource": "arn:aws:s3:::<your-bucket-name>/*"
+        }
+    ]
+}`
+Also, enable static website hosting and mention `index.html` for both index document and error document
+You'll get a `Bucket Website Endpoint` by clicking on that link you can see your application launch.
+
+## Backend
+Go into `backend` folder and zip everything inside. Create a new AWS ElasticBeanstalk environment and application by choosing Node.js platform and uploading the zip file. Once it is deployed you can able to click on the url to see your backend API endpoints.
+
+Note: If you're using mongoDB cloud clusters like me you might have to Add your Elastic Beanstalk EIP into mongoDB cloud IP Access List.
+
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
