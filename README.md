@@ -78,6 +78,8 @@ Go into `backend` folder and zip everything inside. Create a new AWS ElasticBean
 
 Note: If you're using mongoDB cloud clusters like me you might have to Add your Elastic Beanstalk EIP into mongoDB cloud IP Access List.
 
+Please check the `screenshots` folder for all the screenshots
+
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
